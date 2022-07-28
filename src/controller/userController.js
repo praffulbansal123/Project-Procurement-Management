@@ -1,5 +1,6 @@
+import { request } from "express";
 import logger from "../logger/logger.js";
-import {createUser, userLogin} from "../services/userServices.js"
+import {createUser, userLogin, userUpdate} from "../services/userServices.js"
 
 export const registerUser = async (req, res, next) => {
     try {
@@ -27,6 +28,18 @@ export const loginUser = async (req, res, next) => {
         return res.status(200).send({status: true, msg: "Login successfull", token: login.token, user: login.user})
        
     } catch (err) {
+        logger.info(err.message);
+        next(err);
+    }
+}
+
+export const updateUser = async (req, res, next) => {
+    try{
+        const creatorRole = req.decodedToken.role
+        console.log(creatorRole)
+        const update = await userUpdate(req.body, creatorRole)
+        res.status(200).send({status: true, message: 'User updated successfully', data: update})
+    } catch(err) {
         logger.info(err.message);
         next(err);
     }

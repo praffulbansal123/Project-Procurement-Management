@@ -1,4 +1,4 @@
-import { registerUserSchema, loginUserSchema } from '../schemas/joischema.js'
+import { registerUserSchema, loginUserSchema, updateUserSchema } from '../schemas/joischema.js'
 
 const requestValidator = (req, next, schema) => {
     const options = {
@@ -24,5 +24,10 @@ export const createUserSchema = (req, res, next) => {
 
 export const loginSchema = (req, res, next) => {
     const schema = loginUserSchema
+    requestValidator(req, next, schema);
+}
+
+export const updateSchema = (req, res, next) => {
+    const schema = updateUserSchema
     requestValidator(req, next, schema);
 }

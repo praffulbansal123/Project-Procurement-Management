@@ -11,7 +11,8 @@ export const userSchema = new Schema({
     phone: {type: String, required: true, unique: true},
     role: {type: String, required: true, enum: ["admin", "client", "procurement manager", "inspection manager"],default: "client"},
     name: {type: String, required: true},
-    createdBy : {type: Schema.Types.ObjectId }
+    createdBy : {type: Schema.Types.ObjectId },
+    workingUnder : {type: Schema.Types.ObjectId }
 })
 
 // password hashing function

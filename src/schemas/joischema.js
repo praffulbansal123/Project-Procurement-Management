@@ -7,12 +7,19 @@ export const registerUserSchema = Joi.object({
   email: Joi.string().required().email().trim().lowercase(),
   password: Joi.string().pattern(new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$/)).required(),
   phone: Joi.string().required().pattern(new RegExp(/^[6-9]\d{9}$/)),
-  createdBy: Joi.string().hex().length(24)
+  createdBy: Joi.string().hex().length(24),
+  workingUnder: Joi.string().hex().length(24)
 });
 
 export const loginUserSchema = Joi.object({
-    email : Joi.string().email().trim().lowercase(),
-    password : Joi.string().pattern(new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$/)).required(),
-    role : Joi.string().required().valid("admin", "client", "procurement manager", "inspection manager"),
-    phone : Joi.string().pattern(new RegExp(/^[6-9]\d{9}$/)),
+  email : Joi.string().email().trim().lowercase(),
+  password : Joi.string().pattern(new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$/)).required(),
+  role : Joi.string().required().valid("admin", "client", "procurement manager", "inspection manager"),
+  phone : Joi.string().pattern(new RegExp(/^[6-9]\d{9}$/)),
+})
+
+export const updateUserSchema = Joi.object({
+  id: Joi.string().hex().length(24).required(),
+  role: Joi.string().required().valid("admin", "client", "procurement manager", "inspection manager"),
+  workingUnder: Joi.string().hex().length(24).required()
 })

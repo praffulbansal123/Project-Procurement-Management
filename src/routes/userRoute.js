@@ -1,5 +1,5 @@
 import express, { Router } from "express";
-import { createUserSchema, loginSchema } from "../middleware/joiValidator.js";
+import { createUserSchema, loginSchema, updateSchema  } from "../middleware/joiValidator.js";
 import * as UserController from "../controller/userController.js"
 import * as Middleware from "../middleware/auth.js"
 
@@ -12,6 +12,8 @@ router.get("/test", function (req, res) {
 router.post('/register', createUserSchema, Middleware.authentication, UserController.registerUser)
 
 router.post('/login', loginSchema, UserController.loginUser)
+
+router.put('/updateUser', updateSchema, Middleware.authentication, UserController.updateUser)
 
 router.get('/logout', UserController.logoutUser)
 
