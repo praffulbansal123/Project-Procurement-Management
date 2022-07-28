@@ -8,9 +8,9 @@ const requestValidator = (req, next, schema) => {
     };
     const { error, value } = schema.validate(req.body, options);
     if (error) {
-         // joi error status
-         error.status = 422; //
-       return next(error);
+        // joi error status
+        error.status = 422; //
+        return next(error);
     } else {
         req.body = value;
        return next();

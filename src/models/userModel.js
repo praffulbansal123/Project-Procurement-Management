@@ -1,7 +1,7 @@
 import pkg from "mongoose"
 import bcrypt from "bcrypt";
 
-const {Schema, model, Types} = pkg
+const {Schema, model} = pkg
 
 
 export const userSchema = new Schema({
@@ -11,7 +11,7 @@ export const userSchema = new Schema({
     phone: {type: String, required: true, unique: true},
     role: {type: String, required: true, enum: ["admin", "client", "procurement manager", "inspection manager"],default: "client"},
     name: {type: String, required: true},
-    // creator : {type: Schema.Types.ObjectId }
+    createdBy : {type: Schema.Types.ObjectId }
 })
 
 // password hashing function

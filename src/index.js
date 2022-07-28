@@ -1,7 +1,7 @@
 import express from "express";
 import createError from "http-errors";
 import morgan from "morgan";
-import dotenv, { parse } from "dotenv";
+import dotenv from "dotenv";
 import session from "express-session";
 import MongoStore from "connect-mongo";
 import helmet from "helmet";

@@ -3,7 +3,10 @@ import {createUser, userLogin} from "../services/userServices.js"
 
 export const registerUser = async (req, res, next) => {
     try {
-        const user = await createUser(req.body)
+        const creatorRole = req.decodedToken.role
+        const creatorId = req.decodedToken.userId;
+
+        const user = await createUser(req.body, creatorRole, creatorId)
 
         return res.status(200).send({status: true, message: 'New user registered successfully', data: user})
     }
@@ -27,4 +30,13 @@ export const loginUser = async (req, res, next) => {
         logger.info(err.message);
         next(err);
     }
+}
+
+export const logoutUser =  async (req, res, next) => {
+    req.session.destroy((err) => {
+        if(err) {
+            throw new Error(err.message);
+        }
+    });
+   return res.clearCookie("connect.sid").end("logout success");
 }

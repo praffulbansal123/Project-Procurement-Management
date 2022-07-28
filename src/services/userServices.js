@@ -4,20 +4,39 @@ import jwt from "jsonwebtoken";
 import logger from "../logger/logger.js";
 import bcrypt from "bcrypt";
 
-export const createUser = async (input) => {
+export const canCreateUser = (inputRole, creatorRole) => {
+  if(creatorRole === "admin") return true
+  
+  if(creatorRole === 'client' || creatorRole === 'inspection manager') return false
+
+  if(creatorRole === "procurement manager") {
+      if(inputRole === "client" || inputRole === "inspection manager") {
+          return true
+      }
+      return false
+  }
+}
+
+export const createUser = async (input, creatorRole, creatorId ) => {
   try {
+
+    if(!canCreateUser(input.role, creatorRole)){
+      throw new createError.Forbidden(`${creatorRole} are not allowed to create ${input.role}`)
+  }
     // verify email and phone number are unique
     const isEmailExist = await User.findOne({ email: input.email });
 
     if (isEmailExist) {
-      throw new createError.NotAcceptable("Email already exists");
+      throw createError.NotAcceptable("Email already exists");
     }
 
     const isPhoneNumberExist = await User.findOne({ phone: input.phone });
 
     if (isPhoneNumberExist) {
-      throw new createError.NotAcceptable("Phone number already exists");
+      throw createError.NotAcceptable("Phone number already exists");
     }
+
+    input.createdBy = creatorId;
 
     const user = await User.create(input);
 
@@ -39,12 +58,12 @@ export const userLogin = async (input) => {
 
     if(input.role === "inspection manager"){
         if(input.phone === undefined){
-            throw new createError.BadRequest("Inspection manager login, requires phone number");
+            throw createError.BadRequest("Inspection manager login, requires phone number");
         }
         condition.phone = input.phone;
     }else{
         if(input.email === undefined){
-            throw new createError.BadRequest(`${input.role}, login requires Email`)
+            throw createError.BadRequest(`${input.role}, login requires Email`)
         }
         condition.email = input.email;
     }
@@ -52,17 +71,17 @@ export const userLogin = async (input) => {
     const user = await User.findOne(condition);
 
     if(!user){
-        throw new createError.NotFound(`${Object.keys(condition)[0]} does not exist`);
+        throw createError.NotFound(`${Object.keys(condition)[0]} does not exist`);
     }
 
     if(user.role !== input.role){
-        throw new createError.NotAcceptable(`Please login as ${user.role}`);
+        throw createError.NotAcceptable(`Please login as ${user.role}`);
     }
 
     const isPasswordMatch = await bcrypt.compare(input.password, user.password);
 
     if(!isPasswordMatch){
-        throw new createError.Unauthorized('Invalid Password')
+        throw createError.Unauthorized('Invalid Password')
     }
 
     const payload = {
