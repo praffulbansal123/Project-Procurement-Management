@@ -1,4 +1,4 @@
-import { registerUserSchema, loginUserSchema, updateUserSchema } from '../schemas/joischema.js'
+import { registerUserSchema, loginUserSchema, updateUserSchema } from '../schemas/userJoischema.js'
 
 const requestValidator = (req, next, schema) => {
     const options = {
@@ -9,7 +9,7 @@ const requestValidator = (req, next, schema) => {
     const { error, value } = schema.validate(req.body, options);
     if (error) {
         // joi error status
-        error.status = 422; //
+        error.status = 422; 
         return next(error);
     } else {
         req.body = value;

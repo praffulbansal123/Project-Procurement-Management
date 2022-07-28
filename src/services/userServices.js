@@ -157,3 +157,25 @@ export const userUpdate = async (input, creatorRole) => {
     throw (err)
   }
 };
+
+export const inspectionManager = async (payload) => {
+  try {
+
+    if(payload.role === 'inspection manager' || payload.role === 'client') {
+      throw createError.Forbidden(`${payload.role} is not authorized to get Inspection Manager list`)
+    }
+    else if(payload.role === 'admin'){
+      const inspManger = await User.find({role: 'inspection manager'})
+      if(!inspManger) throw createError.NotFound('No Inspection Manager exits')
+      return inspManger
+    } else {
+      console.log(payload.userId)
+      const managerIns = await User.find({role: 'inspection manager', workingUnder: payload.userId})
+      if(!managerIns) throw createError.NotFound(`No Inspection Manager is assigned to this ${payload.role}`)
+      return managerIns
+    }
+  } catch (err) {
+    logger.info(err.message);
+    throw(err)
+  }
+}

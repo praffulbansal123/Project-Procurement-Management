@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-// import Locals from "../config/config";
 import logger from "../logger/logger.js";
 
 class Database {

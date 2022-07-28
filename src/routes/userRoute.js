@@ -1,4 +1,4 @@
-import express, { Router } from "express";
+import express from "express";
 import { createUserSchema, loginSchema, updateSchema  } from "../middleware/joiValidator.js";
 import * as UserController from "../controller/userController.js"
 import * as Middleware from "../middleware/auth.js"
@@ -14,6 +14,8 @@ router.post('/register', createUserSchema, Middleware.authentication, UserContro
 router.post('/login', loginSchema, UserController.loginUser)
 
 router.put('/updateUser', updateSchema, Middleware.authentication, UserController.updateUser)
+
+router.get('/inspectionManager',Middleware.authentication, UserController.getInspectionManager)
 
 router.get('/logout', UserController.logoutUser)
 
