@@ -7,6 +7,8 @@ import MongoStore from "connect-mongo";
 import helmet from "helmet";
 import Database from "../src/db/db.js";
 import userRouter from "./routes/userRoute.js";
+import checklistRouter from "./routes/checklistRoute.js";
+import orderRouter from "./routes/orderRoute.js";
 
 dotenv.config();
 
@@ -37,7 +39,8 @@ Database.init();
 
 // diverting incoming request to router
 app.use("/user", userRouter);
-// app.use("/checklist", checklistRouter);
+app.use("/checklist", checklistRouter);
+app.use("/order", orderRouter);
 
 // checking invalid route
 app.use(async (req, res, next) => {

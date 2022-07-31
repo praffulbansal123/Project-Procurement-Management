@@ -1,7 +1,6 @@
 import User from "../models/userModel.js";
 import createError from "http-errors";
 import jwt from "jsonwebtoken";
-import logger from "../logger/logger.js";
 import bcrypt from "bcrypt";
 
 export const canCreateUser = (inputRole, creatorRole) => {
@@ -71,7 +70,6 @@ export const createUser = async (input, creatorRole, creatorId) => {
 
     return user;
   } catch (err) {
-    logger.info(err.message);
     throw err;
   }
 };
@@ -124,7 +122,6 @@ export const userLogin = async (input) => {
     const obj = { token: token, user: user };
     return obj;
   } catch (err) {
-    logger.info(err.message);
     throw err;
   }
 };
@@ -153,7 +150,6 @@ export const userUpdate = async (input, creatorRole) => {
     
     return updateUser
   } catch(err) {
-    logger.info(err.message);
     throw (err)
   }
 };
@@ -175,7 +171,6 @@ export const inspectionManager = async (payload) => {
       return managerIns
     }
   } catch (err) {
-    logger.info(err.message);
     throw(err)
   }
 }

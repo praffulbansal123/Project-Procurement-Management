@@ -1,4 +1,6 @@
-import { registerUserSchema, loginUserSchema, updateUserSchema } from '../schemas/userJoischema.js'
+import { registerUserSchema, loginUserSchema, updateUserSchema } from '../schemas/userJoiSchema.js'
+import { registerBlankChecklistSchema } from '../schemas/checklistJoiSchema.js'
+import { registerOrderSchema } from '../schemas/orderJoiSchema.js'
 
 const requestValidator = (req, next, schema) => {
     const options = {
@@ -29,5 +31,15 @@ export const loginSchema = (req, res, next) => {
 
 export const updateSchema = (req, res, next) => {
     const schema = updateUserSchema
+    requestValidator(req, next, schema);
+}
+
+export const createBlankChecklistSchema = (req, res, next) => {
+    const schema = registerBlankChecklistSchema
+    requestValidator(req, next, schema);
+}
+
+export const createOrderSchema = (req, res, next) => {
+    const schema = registerOrderSchema
     requestValidator(req, next, schema);
 }

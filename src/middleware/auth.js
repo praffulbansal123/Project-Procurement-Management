@@ -1,21 +1,39 @@
 import createError from "http-errors";
+import logger from "../logger/logger.js";
 import jwt from "jsonwebtoken";
 
 export const authentication = async function (req, res, next) {
   try {
+    let token = req.headers["authorization"];
 
-    if (!req.headers.authorization) throw createError.NotFound("Token not found..please login first");
-    const token = req.headers.authorization.split(" ")[1];
+    if (!token || token.split(" ")[0] !== "Bearer") {
+      throw new createError.Unauthorized("Token is required...please login first." );
+    }
 
-    const decodedToken = jwt.verify(token, process.env.JWT_SECRET, {
-      ignoreExpiration: true,
-    });
-    if(!decodedToken) throw createError.Unauthorized()
-    if (Date.now() > decodedToken.exp * 1000)
-      throw createError.RequestTimeout(" session expired please login again");
+    token = token.split(" ")[1];
+
+    const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
     req.decodedToken = decodedToken;
     next();
   } catch (err) {
-    next(err)
+    err.status = 401;
+    logger.info(err.message);
+    next(err);
   }
+};
+
+export const allowedRoles = (role) => {
+  return async (req, res, next) => {
+    try {
+      
+      const inputRole = req.decodedToken.role;
+      
+      if (!role.includes(inputRole)) 
+        throw createError.Unauthorized(`${inputRole} is not authorized for this resource`)
+
+      return next();
+    } catch (err) {
+      next(err)
+    }
+  };
 };
