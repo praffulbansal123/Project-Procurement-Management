@@ -9,17 +9,17 @@ const orderSchema = new Schema({
     status : {type : String},
     blankChecklistId : {type : ObjectId, ref : "BlankChecklist"},
     filledChecklistId : {type : ObjectId, ref : "FilledChecklist"},
-    items : {type : Number, required: true},
-    itemType : {type : String, required: true},
-    itemDetails : {type : String, required: true},
-    coolerRequired : {type : Boolean, default: false},
-    paddingRequired : {type : Boolean, default: false},
-    waterProtectionRequired : {type : Boolean, default: false},
-    palletsRequired : {type : Boolean, default: false},
-    sharingAllowed : {type : Boolean, default : false},
-    deliveryTo : {type : String, required: true},
-    pickUpFrom : {type : String, required: true},
-    isVerified : {type : Boolean, default: false}
+    items : {type : Number},
+    itemType : {type : String},
+    itemDetails : {type : String},
+    coolerRequired : {type : Boolean},
+    paddingRequired : {type : Boolean},
+    waterProtectionRequired : {type : Boolean},
+    palletsRequired : {type : Boolean},
+    sharingAllowed : {type : Boolean},
+    deliveryTo : {type : String},
+    pickUpFrom : {type : String},
+    isVerified : {type : Boolean}
 
 }, {timestamps : true})
 

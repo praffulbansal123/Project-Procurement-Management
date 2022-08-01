@@ -1,5 +1,5 @@
 import logger from "../logger/logger.js";
-import { createBlankChecklist, getChecklist } from "../services/checklistServices.js";
+import { createBlankChecklist, getChecklist } from "../services/blankChecklistServices.js";
 
 export const registerBlankChecklist = async (req, res, next) => {
   try {
