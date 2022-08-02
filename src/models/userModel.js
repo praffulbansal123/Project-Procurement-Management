@@ -1,9 +1,12 @@
-import pkg from "mongoose"
+import mongoose from "mongoose"
 import bcrypt from "bcrypt";
 
-const {Schema, model} = pkg
+const {Schema, model} = mongoose
 
-
+/*
+* @author Prafful Bansal
+* @description User schema and model objects
+*/
 export const userSchema = new Schema({
     title: {type: String, enum: ["Mr", "Mrs", "Miss"], required: true},
     email: {type: String, required: true, unique: true},
@@ -15,7 +18,7 @@ export const userSchema = new Schema({
     workingUnder : {type: Schema.Types.ObjectId }
 })
 
-// password hashing function
+// Password hashing function
 
 userSchema.pre('save', async function (next) {
     try {     
@@ -28,6 +31,7 @@ userSchema.pre('save', async function (next) {
     }
 });
 
+// Creating Model
 const User = model('User', userSchema);
 
 export default User;

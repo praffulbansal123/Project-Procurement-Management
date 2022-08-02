@@ -5,25 +5,32 @@ import mongoose from "mongoose";
 import { uploadFile } from "../providers/aws.js";
 const { Types } = mongoose;
 
+/*
+* @author Prafful Bansal
+* @description Service for filling blank checklist
+*/
 export const fillChecklist = async (input, payload, orderId, image) => {
   try {
     if (image.length === 0 || !image) {
       throw createError.BadRequest("image is required");
     }
 
+    // regex for validating image format
     const regexForMimeTypes = /image\/png|image\/jpeg|image\/jpg/;
 
+    // validating image format
     const validImageType = image.filter((x) => regexForMimeTypes.test(x.mimetype) === false);
 
     if (validImageType.length > 0) {
       throw createError.BadRequest(`${validImageType[0].fieldname} is not a valid image type`);
     }
 
+    // validating orderId
     if (!Types.ObjectId.isValid(orderId)) {
       throw createError.BadRequest(`${orderId} is not a valid order id`);
     }
 
-    // validate orderId
+    // Finding order by orderId
     const order = await Order.findById(orderId);
 
     if (!order) {
@@ -47,6 +54,7 @@ export const fillChecklist = async (input, payload, orderId, image) => {
     // adding inspection manager id
     input.inspectedBy = payload.userId;
 
+    // creating filled checklist
     const checklist = await FilledChecklist.create(input);
 
     // add fill checklist to order

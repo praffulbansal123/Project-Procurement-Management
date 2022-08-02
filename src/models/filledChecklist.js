@@ -3,6 +3,10 @@ import mongoose from "mongoose";
 const { Schema, model, Types } = mongoose;
 const ObjectId = Schema.Types.ObjectId;
 
+/*
+* @author Prafful Bansal
+* @description FilledChecklist schema and model
+*/
 const filledChecklistSchema = new Schema({
     orderId: { type: ObjectId, ref: "Order" },
     inspectedBy: { type: ObjectId, ref: "User" },
@@ -25,6 +29,7 @@ const filledChecklistSchema = new Schema({
     summary: { type: String },
   }, { timestamps: true });
 
+// Creating Model
 const filledChecklist = model("FilledChecklist", filledChecklistSchema);
 
 export default filledChecklist;

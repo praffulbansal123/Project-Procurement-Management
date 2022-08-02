@@ -1,5 +1,9 @@
 import Joi from "joi";
 
+/*
+* @author Prafful Bansal
+* @description Joi validation for creating new BlankChecklist
+*/
 export const registerBlankChecklistSchema = Joi.object({
     clientId : Joi.string().required().hex().length(24),
     requirements : Joi.object({
@@ -20,6 +24,10 @@ export const registerBlankChecklistSchema = Joi.object({
     summary : Joi.string().default(null),
 })
 
+/*
+* @author Prafful Bansal
+* @description Joi validation for filling blank checklist
+*/
 export const filledChecklistSchema = Joi.object({
    requirements : Joi.object({
        cooler : Joi.boolean().default(false),
@@ -35,5 +43,7 @@ export const filledChecklistSchema = Joi.object({
        phone : Joi.boolean().required(),
        airPressureGood : Joi.boolean().required(),
    }).required(), 
-   summary : Joi.string()
+   summary : Joi.string(),
+   halfLoadingImage : Joi.string(),
+    fullLoadingImage : Joi.string()
 })

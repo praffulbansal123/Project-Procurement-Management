@@ -1,7 +1,11 @@
 import { registerUserSchema, loginUserSchema, updateUserSchema } from '../schemas/userJoiSchema.js'
 import { registerBlankChecklistSchema, filledChecklistSchema } from '../schemas/checklistJoiSchema.js'
-import { registerOrderSchema } from '../schemas/orderJoiSchema.js'
+import { registerOrderSchema, updateStatusSchema  } from '../schemas/orderJoiSchema.js'
 
+/*
+* @author Prafful Bansal
+* @description Joi validation for the incoming request
+*/
 const requestValidator = (req, next, schema) => {
     const options = {
         abortEarly: false, // include all errors
@@ -27,6 +31,7 @@ const formDataValidator = (req, next, schema) => {
     };
 
     let requestBody = {...req.body}
+    console.log(requestBody)
 
     if(requestBody.requirements) {
         requestBody.requirements = JSON.parse(requestBody.requirements);
@@ -73,4 +78,9 @@ export const createOrderSchema = (req, res, next) => {
 export const createFilledChecklistSchema = (req, res, next) => {
     const schema = filledChecklistSchema;
     formDataValidator(req, next, schema)
+}
+
+export const updateOrderStatusSchema = (req, res, next) => {
+    const schema = updateStatusSchema;
+    requestValidator(req, next, schema);
 }

@@ -5,18 +5,27 @@ import * as Middleware from "../middleware/auth.js"
 
 const router = express.Router();
 
+// Testing Route
 router.get("/test", function (req, res) {
   res.send({ status: true, message: "test-api working fine" });
 });
 
+// Register user route
 router.post('/register', createUserSchema, Middleware.authentication, UserController.registerUser)
 
+// Login user route
 router.post('/login', loginSchema, UserController.loginUser)
 
-router.put('/updateUser', updateSchema, Middleware.authentication, UserController.updateUser)
+// Update inspectionManager workingUnder route
+router.put('/updateUser', updateSchema, Middleware.authentication, Middleware.allowedRoles(['admin']), UserController.updateUserHandler)
 
-router.get('/inspectionManager',Middleware.authentication, UserController.getInspectionManager)
+// Get inspectionManager route
+router.get('/inspectionManager',Middleware.authentication, Middleware.allowedRoles(['admin','procurement manager']), UserController.getInspectionManagerHandler)
 
+// Get users
+router.get('/get', Middleware.authentication, Middleware.allowedRoles(['admin']), UserController.getUserByRoleHandler);
+
+// User Logout route
 router.get('/logout', UserController.logoutUser)
 
 export default router;

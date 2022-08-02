@@ -4,6 +4,10 @@ import BlankChecklist from "../models/blankChecklist.js";
 import mongoose from "mongoose";
 const {Types} = mongoose;
 
+/*
+* @author Suraj Dubey
+* @description Service for creating new blank checklist
+*/
 export const createBlankChecklist = async (input, payload) => {
   try {
     // does client exist
@@ -22,6 +26,7 @@ export const createBlankChecklist = async (input, payload) => {
     // adding creator ID
     input.createdBy = payload.userId;
 
+    // creating blank checklist
     const checklist = await BlankChecklist.create(input);
 
     return checklist;
@@ -30,8 +35,14 @@ export const createBlankChecklist = async (input, payload) => {
   }
 };
 
+/*
+* @author Prafful Bansal
+* @description Service for fetching all blank checklist
+*/
 export const getChecklist = async (input) => {
   try {
+
+    // checking valid input Id is object Id
     if (!Types.ObjectId.isValid(input))
       throw createError.BadRequest("Please provide a valid clientId");
 
@@ -44,6 +55,7 @@ export const getChecklist = async (input) => {
       throw createError.NotAcceptable(`${input} is ${client.role}`);
     }
 
+    // Fetching all the blank checklist by clientId
     const checklists = await BlankChecklist.find({ clientId: input });
 
     if (checklists.length === 0) {

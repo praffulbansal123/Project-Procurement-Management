@@ -2,6 +2,10 @@ import createError from "http-errors";
 import logger from "../logger/logger.js";
 import jwt from "jsonwebtoken";
 
+/*
+* @author Prafful Bansal
+* @description AuthMiddleware 
+*/
 export const authentication = async function (req, res, next) {
   try {
     let token = req.headers["authorization"];
@@ -22,6 +26,10 @@ export const authentication = async function (req, res, next) {
   }
 };
 
+/*
+* @author Prafful Bansal
+* @description Role management service
+*/
 export const allowedRoles = (role) => {
   return async (req, res, next) => {
     try {

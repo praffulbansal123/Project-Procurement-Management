@@ -1142,3 +1142,152 @@
 {"level":"info","message":"Cannot read properties of undefined (reading 'length')","metadata":{},"timestamp":"2022-08-01T00:04:41.789Z"}
 {"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T00:14:43.109Z"}
 {"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T00:14:44.240Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T12:57:57.450Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T12:58:01.904Z"}
+{"level":"info","message":"jwt expired","metadata":{},"timestamp":"2022-08-01T13:00:23.741Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T13:08:43.313Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T13:08:45.431Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T13:12:32.292Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T13:12:34.340Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T13:12:47.755Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T13:12:48.869Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T13:13:59.397Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T13:14:00.708Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T13:14:42.234Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T13:15:19.639Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T13:15:21.719Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T13:18:51.389Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T13:18:53.265Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T13:19:12.222Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T13:19:13.342Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T13:22:50.950Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T13:22:52.176Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T13:25:04.003Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T13:25:05.338Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T13:25:21.114Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T13:25:22.297Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T13:25:52.424Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T13:25:53.610Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T13:50:50.483Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T13:50:56.226Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T13:50:58.443Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T13:51:05.423Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T13:51:10.966Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T13:54:31.925Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T13:54:35.019Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T13:59:33.179Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T13:59:38.635Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T13:59:40.728Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T13:59:47.630Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T13:59:49.950Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T13:59:53.957Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T13:59:56.247Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:00:27.846Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:00:30.093Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:00:53.123Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:00:55.211Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:01:00.699Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:01:02.657Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:01:13.961Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:01:16.067Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:04:45.365Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:04:47.950Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:04:53.116Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:04:55.217Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:05:10.385Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:05:12.511Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:05:24.737Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:05:26.842Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:05:31.468Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:05:36.277Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:05:38.251Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:06:00.856Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:06:06.536Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:06:08.665Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:06:31.432Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:06:40.464Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:06:44.805Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:06:49.895Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:06:52.030Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:07:24.565Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:07:26.503Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:11:05.728Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:11:08.033Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:11:11.626Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:11:16.840Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:11:18.944Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:11:53.519Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:11:55.744Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:12:02.133Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:12:04.238Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:12:20.251Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:12:22.503Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:12:46.955Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:12:48.941Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:13:03.199Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:13:05.181Z"}
+{"level":"info","message":"jwt expired","metadata":{},"timestamp":"2022-08-01T14:13:24.965Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:21:19.369Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:21:21.811Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:21:45.877Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:21:47.975Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:21:56.160Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:21:58.098Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:23:06.673Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:23:08.775Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:26:01.062Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:26:03.112Z"}
+{"level":"info","message":"Email already exists","metadata":{},"timestamp":"2022-08-01T14:34:47.086Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:36:19.299Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:36:21.576Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:40:08.948Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:40:10.304Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:43:40.612Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:43:43.202Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:44:02.114Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:44:03.861Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T14:44:15.407Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T14:44:17.432Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T15:04:35.605Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T15:04:37.172Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T15:04:54.109Z"}
+{"level":"info","message":"Database connection error: connect ETIMEDOUT 13.235.195.8:27017","metadata":{},"timestamp":"2022-08-01T15:05:23.007Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T15:06:09.536Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T15:06:10.729Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T15:06:14.614Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T15:06:15.875Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T15:40:43.861Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T15:40:45.468Z"}
+{"level":"info","message":"Token is required...please login first.","metadata":{},"timestamp":"2022-08-01T15:45:00.604Z"}
+{"level":"info","message":"createHttpError is not defined","metadata":{},"timestamp":"2022-08-01T15:45:25.502Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T15:46:11.766Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T15:46:20.974Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T15:46:25.382Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T15:46:29.645Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T15:46:30.709Z"}
+{"level":"info","message":"can not update status as completed as order has not been dispatched","metadata":{},"timestamp":"2022-08-01T15:46:34.152Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T15:47:12.506Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T15:47:13.636Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T16:04:59.567Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T16:05:00.772Z"}
+{"level":"info","message":"Token is required...please login first.","metadata":{},"timestamp":"2022-08-01T16:05:03.722Z"}
+{"level":"info","message":"Cannot read properties of undefined (reading 'userId')","metadata":{},"timestamp":"2022-08-01T16:05:46.332Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-01T16:06:05.652Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-01T16:06:06.772Z"}
+{"level":"info","message":"can not see other users orders","metadata":{},"timestamp":"2022-08-01T16:06:12.084Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-02T07:17:49.635Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-02T07:17:50.069Z"}
+{"level":"info","message":"Token is required...please login first.","metadata":{},"timestamp":"2022-08-02T07:17:54.312Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-02T07:25:48.563Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-02T07:25:49.000Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-02T07:28:03.194Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-02T07:28:03.591Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-02T07:28:17.804Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-02T07:28:18.136Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-02T07:28:28.637Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-02T07:28:28.942Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-02T07:29:12.190Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-02T07:29:12.583Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-02T12:43:18.364Z"}
+{"level":"info","message":"Server listening on port 3000","metadata":{},"timestamp":"2022-08-02T12:44:02.022Z"}
+{"level":"info","message":"Database initialized successfully","metadata":{},"timestamp":"2022-08-02T12:44:04.722Z"}

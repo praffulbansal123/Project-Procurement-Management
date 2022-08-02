@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 const {Schema, model, Types} = mongoose
 
+/*
+* @author Prafful Bansal
+* @description Order schema and model
+*/
 const ObjectId = Schema.Types.ObjectId;
 
 const orderSchema = new Schema({
@@ -23,7 +27,7 @@ const orderSchema = new Schema({
 
 }, {timestamps : true})
 
+// Creating Model
+const Order = model("Order", orderSchema);
 
- const Order = model("Order", orderSchema);
-
- export default Order;
+export default Order;

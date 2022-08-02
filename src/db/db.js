@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 import logger from "../logger/logger.js";
 
+/*
+* @author Prafful Bansal
+* @description Database configuration
+*/
 class Database {
   // Initialize the database connection
   static async init() {

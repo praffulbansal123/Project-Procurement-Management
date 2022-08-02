@@ -3,6 +3,10 @@ import createError from "http-errors";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
+/*
+* @author Prafful Bansal
+* @description  checking whether logged in user can create a new user
+*/
 export const canCreateUser = (inputRole, creatorRole) => {
   if (creatorRole === "admin") return true;
 
@@ -17,10 +21,16 @@ export const canCreateUser = (inputRole, creatorRole) => {
   }
 };
 
+/*
+* @author Prafful Bansal
+* @description Service for creating new users
+*/
 export const createUser = async (input, creatorRole, creatorId) => {
   try {
+
+    // checking logged in user
     if (!canCreateUser(input.role, creatorRole)) {
-      throw new createError.Forbidden(
+      throw createError.Forbidden(
         `${creatorRole} are not allowed to create ${input.role}`
       );
     }
@@ -37,6 +47,7 @@ export const createUser = async (input, creatorRole, creatorId) => {
       throw createError.NotAcceptable("Phone number already exists");
     }
 
+    // adding createdBy key
     input.createdBy = creatorId;
 
     if (creatorRole === "admin" && input.role === "inspection manager") {
@@ -69,15 +80,20 @@ export const createUser = async (input, creatorRole, creatorId) => {
     user.password = undefined;
 
     return user;
-  } catch (err) {
-    throw err;
+  } catch (error) {
+    throw error;
   }
 };
 
+/*
+* @author Prafful Bansal
+* @description Service for login
+*/
 export const userLogin = async (input) => {
   try {
     const condition = {};
 
+    // inspection manager can only login with phone number
     if (input.role === "inspection manager") {
       if (input.phone === undefined) {
         throw createError.BadRequest("Inspection manager login, requires phone number");
@@ -100,12 +116,14 @@ export const userLogin = async (input) => {
       throw createError.NotAcceptable(`Please login as ${user.role}`);
     }
 
+    // comparing password
     const isPasswordMatch = await bcrypt.compare(input.password, user.password);
 
     if (!isPasswordMatch) {
       throw createError.Unauthorized("Invalid Password");
     }
 
+    // JWT logic
     const payload = {
       userId: user._id.toString(),
       role: user.role,
@@ -121,15 +139,18 @@ export const userLogin = async (input) => {
 
     const obj = { token: token, user: user };
     return obj;
-  } catch (err) {
-    throw err;
+  } catch (error) {
+    throw error;
   }
 };
 
-export const userUpdate = async (input, creatorRole) => {
+/*
+* @author Prafful Bansal
+* @description Service for updating inspection manager
+*/
+export const userUpdate = async (input) => {
   try {
-    if(creatorRole !== 'admin') throw createError.Forbidden('Only admin can update the user')
-
+    
     if(input.role !== 'inspection manager') throw createError.Forbidden(`${input.role} profile can not be updated`)
 
     const user = await User.findById(input.id).select({role:1, workingUnder:1})
@@ -149,28 +170,51 @@ export const userUpdate = async (input, creatorRole) => {
     const updateUser = await User.findOneAndUpdate({_id: input.id}, {$set: {workingUnder: input.workingUnder}}, {new: true})
     
     return updateUser
-  } catch(err) {
-    throw (err)
+  } catch(error) {
+    throw (error)
   }
 };
 
-export const inspectionManager = async (payload) => {
+/*
+* @author Prafful Bansal
+* @description Service for gettting all inspection manager by login role
+*/
+export const getinspectionManager = async (payload) => {
   try {
-
-    if(payload.role === 'inspection manager' || payload.role === 'client') {
-      throw createError.Forbidden(`${payload.role} is not authorized to get Inspection Manager list`)
+    const condition = {role: 'inspection manager' }
+  
+    if(payload.role === 'procrument manager'){
+      condition.workingUnder = payload.userId
     }
-    else if(payload.role === 'admin'){
-      const inspManger = await User.find({role: 'inspection manager'})
-      if(!inspManger) throw createError.NotFound('No Inspection Manager exits')
-      return inspManger
-    } else {
-      console.log(payload.userId)
-      const managerIns = await User.find({role: 'inspection manager', workingUnder: payload.userId})
+      const managerIns = await User.find(condition)
       if(!managerIns) throw createError.NotFound(`No Inspection Manager is assigned to this ${payload.role}`)
       return managerIns
-    }
-  } catch (err) {
-    throw(err)
+    
+  } catch (error) {
+    throw(error)
   }
-}
+};
+
+/*
+* @author Prafful Bansal
+* @description Service for get all users by role
+*/
+export const getUserByRole = async (input) => {
+  try {
+  
+    if (!["admin", "client", "procurement manager", "inspection manager"].includes(input)) {
+      throw createError.BadRequest("Invalid role")
+    }
+  
+    const users = await User.find({role: input}).select({password: 0});
+
+    if (users.length === 0) {
+      throw createError.NotFound(`No users found of ${input} role`)
+    }
+  
+    return users;
+
+  } catch (error) {
+      throw error
+  }
+};

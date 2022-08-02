@@ -1,5 +1,9 @@
 import Joi from 'joi';
 
+/*
+* @author Prafful Bansal
+* @description Joi validation for creating orders
+*/
 export const registerOrderSchema = Joi.object({
    
     clientId:  Joi.string().hex().required().length(24),
@@ -16,3 +20,11 @@ export const registerOrderSchema = Joi.object({
     pickUpFrom : Joi.string().required().min(3),
 
 });
+
+/*
+* @author Prafful Bansal
+* @description Joi validation for updating order status
+*/
+export const updateStatusSchema = Joi.object({
+    status : Joi.string().required().valid("completed", "dispatched")
+})

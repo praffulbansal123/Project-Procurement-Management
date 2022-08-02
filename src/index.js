@@ -11,15 +11,23 @@ import checklistRouter from "./routes/checklistRoute.js";
 import orderRouter from "./routes/orderRoute.js";
 import multer from "multer"
 
+// dotenv configuration
 dotenv.config();
 
+// express app configuration
 const app = express();
 
 const port = parseInt(process.env.PORT);
 
 app.set("port", port);
+
+// Implementing helmet middleware
 app.use(helmet());
+
+// Implementing morgan middleware
 app.use(morgan("dev"));
+
+// Implementing express session middleware
 app.use(session({
   secret : process.env.SECRET,
   resave: false,
@@ -33,15 +41,21 @@ app.use(session({
   })
 }));
 
+// Parsing middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(multer().any())
 
+// Database initialized
 Database.init();
 
-// diverting incoming request to router
+// diverting user request to user router
 app.use("/user", userRouter);
+
+// diverting checklist request to checklist router
 app.use("/checklist", checklistRouter);
+
+// diverting order request to order router
 app.use("/order", orderRouter);
 
 // checking invalid route

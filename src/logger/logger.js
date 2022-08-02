@@ -1,5 +1,9 @@
 import { createLogger, transports, format } from "winston";
 
+/*
+* @author Prafful Bansal
+* @description logger for logging events 
+*/
 const logger = createLogger({
   transports: [
     new transports.Console({

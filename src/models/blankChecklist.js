@@ -1,5 +1,9 @@
 import mongoose from "mongoose";
 
+/*
+* @author Prafful Bansal
+* @description BlankChecklist schema and model
+*/
 const {Schema, model, Types } = mongoose
 const ObjectId = Schema.Types.ObjectId;
 
@@ -23,6 +27,7 @@ const blankChecklistSchema = new Schema({
     summary : {type : String}
 }, {timestamps : true})
 
- const blankChecklist = model("BlankChecklist", blankChecklistSchema)
+// Creating Model
+const blankChecklist = model("BlankChecklist", blankChecklistSchema)
 
- export default blankChecklist;
+export default blankChecklist;

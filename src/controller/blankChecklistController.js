@@ -1,6 +1,11 @@
 import logger from "../logger/logger.js";
 import { createBlankChecklist, getChecklist } from "../services/blankChecklistServices.js";
 
+/*
+* @author Prafful Bansal
+* @description Create blank checklist 
+* @route POST checklist/register/blank
+*/
 export const registerBlankChecklist = async (req, res, next) => {
   try {
     const payload = req.decodedToken;
@@ -15,6 +20,11 @@ export const registerBlankChecklist = async (req, res, next) => {
   }
 };
 
+/*
+* @author Prafful Bansal
+* @description Registering filled checklist
+* @route GET checklist/get/blank/:clientId
+*/
 export const getChecklistByClientIdHandler = async (req, res, next) => {
   try {
     const clientId = req.params.clientId;

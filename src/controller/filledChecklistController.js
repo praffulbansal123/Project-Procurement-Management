@@ -1,6 +1,11 @@
 import logger from "../logger/logger.js";
 import { fillChecklist } from "../services/filledChecklistServices.js";
 
+/*
+* @author Prafful Bansal
+* @description Registering filled checklist
+* @route POST checklist/register/fill/:orderId
+*/
 export const fillChecklistHandler = async (req, res, next) => {
     try {
         const orderId = req.params.orderId;
